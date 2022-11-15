@@ -1,0 +1,39 @@
+create database hlink;
+-- LOGIN
+create table if not exists UserLogin (
+id int AUTO_INCREMENT PRIMARY KEY,
+username varchar(65) not null,
+password varchar(65) not null
+)
+
+insert into userlogin 
+	(username, password)
+	values
+	("teste", 123);
+
+-- PRODUTOS
+create table if not exists produtos (
+id int AUTO_INCREMENT PRIMARY KEY,
+nome varchar(65) not null,
+categoria varchar(65) not null,
+ingredientes varchar(300) not null,
+preco varchar(65) not null,
+fabricante  varchar(65) not null,
+stock  varchar(65) not null,
+imagem VARCHAR(300) NULL
+)
+
+insert into produtos 
+(nome, categoria, ingredientes, preco, fabricante, stock, imagem)
+values
+('Margarita', 'pizza', 'queijo', 12, 'sonae', 5, 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUTExIWFRUXGBgaGRgYGBogGxseGB0aGh0fGh0bICggGB4lGxcaITEiJSkrLi4uGB8zODMtNygtLisBCgoKDg0OGxAQGy0mICYtLS0vNS0tLS0tLy0tLS0tLS0tLy0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIAMoA+QMBIgACEQEDEQH/xAAcAAACAwEBAQEAAAAAAAAAAAAEBQMGBwIBAAj')
+
+-- USER DADOS
+create table if not exists Userdados (
+id int AUTO_INCREMENT PRIMARY KEY,
+email varchar(65) unique not null,
+username varchar(65) unique not null,
+password varchar(65) not null,
+Morada varchar(300) not null,
+Telefone varchar(13) not null
+)
